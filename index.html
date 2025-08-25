@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TerraBloom Gardens - Your Natural Sanctuary</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="stles.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark-earth fixed-top py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+  <img src="images/landscape-logo-design-template-free-vector.jpg" 
+       alt="TerraBloom Logo" 
+       class="d-inline-block align-text-top me-2 rounded-circle"
+       width="40" height="40">
+  TerraBloom Gardens
+</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#hero">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">Our Story</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="collection.html">Collection</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="expertise.html">Expertise</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Connect</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with 3D Effect -->
+    <header id="hero" class="hero-section d-flex align-items-center justify-content-center text-white text-center">
+        <div class="container position-relative">
+            <div class="row align-items-center">
+                <div class="col-lg-6 text-start" data-aos="fade-right" data-aos-duration="1000">
+                    <h1 class="display-3 fw-bold mb-4">Cultivate Your Natural Sanctuary</h1>
+                    <p class="lead mb-5">Discover ethically sourced plants, artisanal tools, and holistic gardening solutions for every space.</p>
+                    <a href="collection.html" class="btn btn-primary-earth btn-lg rounded-pill px-4 py-2">Explore Our Collection</a>
+                    <a href="about.html" class="btn btn-outline-light-earth btn-lg rounded-pill ms-3 px-4 py-2">Our Philosophy</a>
+                </div>
+                <div class="col-lg-6 d-flex justify-content-center align-items-center mt-5 mt-lg-0" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="scene-3d">
+                        <div class="person-watering">
+                            <!--
+                                IMPORTANT: Replace this placeholder image with a high-quality,
+                                stylized 2D illustration or pre-rendered 3D image of a person
+                                watering plants for the "fantastic high-level 3D" look, fitting
+                                an earthy, artistic aesthetic.
+                            -->
+                            <img src="images/hello.png" alt="Person watering plants" class="img-fluid" id="watering-img">
+                            <div class="water-effect"></div>
+                            <div class="plant-pot"></div>
+                            <div class="ground-texture"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-5 bg-light-earth">
+        <div class="container" data-aos="fade-up" data-aos-duration="1000">
+            <h2 class="text-center display-4 mb-5 fw-bold text-dark-earth-heading">Our Roots, Our Passion</h2>
+            <div class="row featurette align-items-center mb-5">
+                <div class="col-md-7 order-md-2" data-aos="fade-left" data-aos-delay="200">
+                    <h3 class="featurette-heading mb-3 text-dark-earth-heading">A Legacy of Green. <span class="text-muted-earth">Grounded in Nature.</span></h3>
+                    <p class="lead">TerraBloom Gardens began with a simple belief: that connecting with nature enriches life. For over a decade, we've carefully curated a selection of sustainable gardening essentials, fostering a community that values authenticity and environmental harmony. Our commitment extends from sourcing resilient plants to offering handcrafted tools that last a lifetime.</p>
+                </div>
+                <div class="col-md-5 order-md-1" data-aos="fade-right" data-aos-delay="200">
+                    <img class="img-fluid rounded-lg shadow-lg" src="images/Unconfirmed 363209.crdownload" alt="Organic farming scene">
+                </div>
+            </div>
+            <hr class="featurette-divider my-5">
+            <div class="row featurette align-items-center">
+                <div class="col-md-7" data-aos="fade-right" data-aos-delay="200">
+                    <h3 class="featurette-heading mb-3 text-dark-earth-heading">Our Promise: <span class="text-muted-earth">Cultivating Harmony.</span></h3>
+                    <p class="lead">Every item at TerraBloom is chosen with intention. We champion organic practices, support local artisans, and strive to inspire a mindful approach to gardening. Our aim is to provide not just products, but the knowledge and inspiration for you to create a thriving, beautiful, and sustainable outdoor (or indoor) sanctuary.</p>
+                </div>
+                <div class="col-md-5" data-aos="fade-left" data-aos-delay="200">
+                    <img class="img-fluid rounded-lg shadow-lg" src="images/hands-holding-growing-seedlings_34998-99.avif" alt="Hand holding seedling">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-5 bg-white">
+        <div class="container" data-aos="fade-up" data-aos-duration="1000">
+            <h2 class="text-center display-4 mb-5 fw-bold text-dark-earth-heading">Our Curated Collection</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <div class="col">
+                    <div class="card h-100 shadow-sm border-0 product-card" data-aos="zoom-in" data-aos-delay="100">
+                        <img src="images/art.jpg" class="card-img-top" alt="Artisan Tool Set">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold text-dark-earth-heading">Artisan Gardening Tool Set</h5>
+                            <p class="card-text text-earth">Hand-forged tools, crafted for longevity.</p>
+                            <span class="price fw-bold text-primary-earth">$99.99</span>
+                            <a href="#" class="btn btn-primary-earth mt-3 d-block rounded-pill">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow-sm border-0 product-card" data-aos="zoom-in" data-aos-delay="200">
+                        <img src="images/all.jpg" class="card-img-top" alt="Heirloom Seed Packets">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold text-dark-earth-heading">Heirloom Organic Seeds</h5>
+                            <p class="card-text text-earth">Rare varieties for a truly unique garden.</p>
+                            <span class="price fw-bold text-primary-earth">$18.99</span>
+                            <a href="#" class="btn btn-primary-earth mt-3 d-block rounded-pill">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow-sm border-0 product-card" data-aos="zoom-in" data-aos-delay="300">
+                        <img src="images/pots.jpg" class="card-img-top" alt="Handmade Terracotta Pot">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold text-dark-earth-heading">Hand-Thrown Terracotta Pots</h5>
+                            <p class="card-text text-earth">Breathable and beautiful, perfect for any plant.</p>
+                            <span class="price fw-bold text-primary-earth">$34.99</span>
+                            <a href="#" class="btn btn-primary-earth mt-3 d-block rounded-pill">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow-sm border-0 product-card" data-aos="zoom-in" data-aos-delay="400">
+                        <img src="images/imdia.webp" class="card-img-top" alt="Native Plant Selection">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold text-dark-earth-heading">Region-Specific Native Plants</h5>
+                            <p class="card-text text-earth">Thrive naturally, support local ecosystems.</p>
+                            <span class="price fw-bold text-primary-earth">$29.99</span>
+                            <a href="#" class="btn btn-primary-earth mt-3 d-block rounded-pill">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow-sm border-0 product-card" data-aos="zoom-in" data-aos-delay="500">
+                        <img src="images/black-bag-2020.jpg" class="card-img-top" alt="Organic Compost Blend">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold text-dark-earth-heading">Premium Organic Compost</h5>
+                            <p class="card-text text-earth">Fuel your soil with nutrient-rich goodness.</p>
+                            <span class="price fw-bold text-primary-earth">$22.99</span>
+                            <a href="#" class="btn btn-primary-earth mt-3 d-block rounded-pill">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow-sm border-0 product-card" data-aos="zoom-in" data-aos-delay="600">
+                        <img src="images/1689759199-original_complete-terrarium-kit-diy-bonn.avif" class="card-img-top" alt="DIY Terrarium Kit">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold text-dark-earth-heading">DIY Indoor Terrarium Kit</h5>
+                            <p class="card-text text-earth">Create your own miniature lush ecosystem.</p>
+                            <span class="price fw-bold text-primary-earth">$64.99</span>
+                            <a href="#" class="btn btn-primary-earth mt-3 d-block rounded-pill">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5 bg-light-earth">
+        <div class="container" data-aos="fade-up" data-aos-duration="1000">
+            <h2 class="text-center display-4 mb-5 fw-bold text-dark-earth-heading">Our Cultivation Expertise</h2>
+            <div class="row text-center">
+                <div class="col-md-4 mb-4" data-aos="flip-left" data-aos-delay="100">
+                    <div class="service-card p-4 rounded-lg shadow-sm h-100 bg-white">
+                        <i class="fas fa-palette fa-3x mb-3 text-primary-earth"></i>
+                        <h4 class="fw-bold text-dark-earth-heading">Bespoke Garden Design</h4>
+                        <p class="text-muted-earth">Crafting personalized outdoor spaces that reflect your unique style.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="flip-left" data-aos-delay="200">
+                    <div class="service-card p-4 rounded-lg shadow-sm h-100 bg-white">
+                        <i class="fas fa-hands-helping fa-3x mb-3 text-primary-earth"></i>
+                        <h4 class="fw-bold text-dark-earth-heading">Sustainable Landscape Consultation</h4>
+                        <p class="text-muted-earth">Guidance on eco-friendly practices for a thriving, low-maintenance garden.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="flip-left" data-aos-delay="300">
+                    <div class="service-card p-4 rounded-lg shadow-sm h-100 bg-white">
+                        <i class="fas fa-feather-alt fa-3x mb-3 text-primary-earth"></i>
+                        <h4 class="fw-bold text-dark-earth-heading">Organic Plant Care Workshops</h4>
+                        <p class="text-muted-earth">Hands-on learning to empower your green thumb with natural methods.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5 bg-primary-earth text-white text-center">
+        <div class="container" data-aos="zoom-in" data-aos-duration="1000">
+            <h2 class="display-5 fw-bold mb-4">Voices From Our Garden Community</h2>
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <p class="lead mb-3 fst-italic text-black">"TerraBloom Gardens helped me create an urban oasis. Their passion for sustainable gardening is truly inspiring!"</p>
+                        <footer class="blockquote-footer text-black">Alice M., <cite title="Source Title">City Gardener</cite></footer>
+                    </div>
+                    <div class="carousel-item">
+                        <p class="lead mb-3 fst-italic text-black">"The quality of their heirloom seeds is unmatched. My vegetable patch has never been more bountiful."</p>
+                        <footer class="blockquote-footer text-black">Robert K., <cite title="Source Title">Homesteader</cite></footer>
+                    </div>
+                    <div class="carousel-item">
+                        <p class="lead mb-3 fst-italic text-black">"I love the artisanal tools from TerraBloom. They feel wonderful in hand and make gardening a joy."</p>
+                        <footer class="blockquote-footer text-black">Sophia L., <cite title="Source Title">Nature Enthusiast</cite></footer>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <a href="contact.html" class="btn btn-outline-light-earth btn-lg mt-5 rounded-pill px-4 py-2 ">Start Your Journey</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-white">
+        <div class="container" data-aos="fade-up" data-aos-duration="1000">
+            <h2 class="text-center display-4 mb-5 fw-bold text-dark-earth-heading">Connect With Us</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <p class="lead text-center mb-5 text-muted-earth">Have questions about our products, services, or sustainable practices? Reach out to our dedicated team.</p>
+                    <form class="needs-validation" novalidate>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="firstName" class="form-label text-dark-earth-heading">First name</label>
+                                <input type="text" class="form-control" id="firstName" required>
+                                <div class="invalid-feedback">
+                                    Valid first name is required.
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="lastName" class="form-label text-dark-earth-heading">Last name</label>
+                                <input type="text" class="form-control" id="lastName" required>
+                                <div class="invalid-feedback">
+                                    Valid last name is required.
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <label for="email" class="form-label text-dark-earth-heading">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
+                                <div class="invalid-feedback">
+                                    Please enter a valid email address.
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <label for="subject" class="form-label text-dark-earth-heading">Subject</label>
+                                <input type="text" class="form-control" id="subject" required>
+                                <div class="invalid-feedback">
+                                    Please enter a subject.
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <label for="message" class="form-label text-dark-earth-heading">Message</label>
+                                <textarea class="form-control" id="message" rows="5" required></textarea>
+                                <div class="invalid-feedback">
+                                    Please enter your message.
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="my-4">
+                        <button class="w-100 btn btn-primary-earth btn-lg rounded-pill" type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            <div class="row mt-5 text-center">
+                <div class="col-md-4 mb-3" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-map-marker-alt fa-2x text-primary-earth mb-2"></i>
+                    <p class="fw-bold text-dark-earth-heading">Our Haven</p>
+                    <p class="text-muted-earth">456 TerraBloom Lane, Nature's Edge, NE 67890</p>
+                </div>
+                <div class="col-md-4 mb-3" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-phone-alt fa-2x text-primary-earth mb-2"></i>
+                    <p class="fw-bold text-dark-earth-heading">Reach Out</p>
+                    <p class="text-muted-earth">(987) 654-3210</p>
+                </div>
+                <div class="col-md-4 mb-3" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-envelope fa-2x text-primary-earth mb-2"></i>
+                    <p class="fw-bold text-dark-earth-heading">Email Us</p>
+                    <p class="text-muted-earth">info@terrabloomgardens.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-earth text-white py-4">
+        <div class="container text-center">
+            <p class="mb-3">&copy; 2023 TerraBloom Gardens. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#" class="text-white mx-2"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-pinterest"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Font Awesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Custom JS (for AOS init and form validation) -->
+    <script>
+        AOS.init({
+            once: true, // Only animate once when element comes into view
+            duration: 900, // Animation duration slightly longer
+            easing: 'ease-out-cubic', // Smoother easing function
+        });
+
+        // Bootstrap Form Validation (standard boilerplate)
+        (function () {
+            'use strict'
+            var forms = document.querySelectorAll('.needs-validation')
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
+</body>
+</html>

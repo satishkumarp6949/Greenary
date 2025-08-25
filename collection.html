@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Collection - TerraBloom Gardens</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom Styles (All Inline as requested) -->
+    <style>
+        /* Google Fonts - Lora (serif for headings), Nunito (sans-serif for body) */
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Nunito:wght@300;400;600;700&display=swap');
+
+        :root {
+            --primary-earth: #6a804a;    /* Muted Olive Green */
+            --dark-earth: #4a5c32;       /* Deeper Olive/Forest Green */
+            --light-earth: #f4f6ef;      /* Soft Cream/Off-White */
+            --accent-terracotta: #cc7451; /* Warm Terracotta */
+            --text-color: #3f4a38;       /* Dark Greenish-Grey */
+            --heading-color: #2a3324;    /* Very Dark Green */
+            --muted-text: #6b7a61;       /* Lighter Muted Green */
+            --white: #fff;
+            --shadow-light: rgba(0, 0, 0, 0.08);
+            --shadow-deep: rgba(0, 0, 0, 0.2);
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            color: var(--text-color);
+            background-color: var(--light-earth);
+            line-height: 1.7;
+            scroll-behavior: smooth;
+            padding-top: 75px; /* Offset for fixed navbar */
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Lora', serif;
+            font-weight: 700;
+            color: var(--heading-color);
+        }
+
+        /* Custom Bootstrap overrides */
+        .navbar {
+            background-color: var(--dark-earth) !important;
+            box-shadow: 0 4px 15px var(--shadow-light);
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar-brand {
+            font-family: 'Lora', serif;
+            font-weight: 700;
+            color: var(--white) !important;
+            font-size: 1.6rem;
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--white) !important;
+            padding: 0.6rem 1.2rem;
+            position: relative;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: var(--accent-terracotta) !important; /* Highlight with terracotta */
+            transform: translateY(-2px);
+        }
+
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 5px; /* Adjust position */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px; /* Thinner underline */
+            background-color: var(--accent-terracotta);
+            transition: width 0.3s ease-out;
+        }
+
+        .navbar-nav .nav-link:hover::after,
+        .navbar-nav .nav-link.active::after {
+            width: 70%;
+        }
+
+        .btn-primary-earth {
+            background-color: var(--primary-earth);
+            border-color: var(--primary-earth);
+            color: var(--white);
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .btn-primary-earth:hover {
+            background-color: var(--dark-earth);
+            border-color: var(--dark-earth);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-outline-light-earth {
+            color: var(--white) !important;
+            border-color: var(--white) !important;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .btn-outline-light-earth:hover {
+            background-color: var(--accent-terracotta);
+            color: var(--white) !important;
+            border-color: var(--accent-terracotta) !important;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            min-height: 45vh; /* Shorter hero for internal pages */
+            background: linear-gradient(rgba(74, 92, 50, 0.8), rgba(106, 128, 74, 0.7)), url('https://via.placeholder.com/1920x1080/6a804a/ffffff?text=Collection+Hero') no-repeat center center/cover;
+            position: relative;
+            overflow: hidden;
+            padding-top: 100px;
+            padding-bottom: 50px;
+        }
+
+        .hero-section h1 {
+            font-family: 'Lora', serif;
+            font-size: 3.5rem;
+            color: var(--white);
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero-section p.lead {
+            font-family: 'Nunito', sans-serif;
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.95);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* General Section Styling */
+        section {
+            padding: 90px 0;
+        }
+
+        .bg-light-earth {
+            background-color: var(--light-earth);
+        }
+
+        .text-primary-earth {
+            color: var(--primary-earth) !important;
+        }
+
+        .text-dark-earth-heading {
+            color: var(--heading-color) !important;
+        }
+
+        .text-muted-earth {
+            color: var(--muted-text) !important;
+        }
+
+        /* Product Cards */
+        .product-card {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border-radius: 18px; /* More rounded */
+            overflow: hidden;
+            box-shadow: 0 8px 25px var(--shadow-light);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            height: 100%; /* Ensure cards in a row have equal height */
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px var(--shadow-deep);
+        }
+
+        .product-card img {
+            border-top-left-radius: 18px;
+            border-top-right-radius: 18px;
+            object-fit: cover;
+            height: 220px; /* Consistent height for product images */
+            width: 100%;
+        }
+
+        .product-card .card-body {
+            padding: 2.2rem 1.8rem; /* More generous padding */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Push price/button to bottom */
+        }
+
+        .product-card .card-text {
+            flex-grow: 1; /* Allow description to take up available space */
+        }
+
+        .product-card .price {
+            font-size: 1.8rem;
+            font-family: 'Lora', serif; /* Use serif for price */
+            margin-top: 1rem;
+            display: block;
+        }
+
+        .product-section-title {
+            position: relative;
+            padding-bottom: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .product-section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-terracotta);
+            border-radius: 2px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-earth);
+        }
+
+        .social-icons a {
+            font-size: 1.6rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: var(--accent-terracotta) !important;
+        }
+
+        /* Modern UI Enhancements */
+        .rounded-lg {
+            border-radius: 1.2rem !important; /* Custom rounded class for larger elements */
+        }
+
+        /* --- Media Queries for max-width: 450px --- */
+        @media (max-width: 450px) {
+            body {
+                padding-top: 65px;
+            }
+
+            .navbar-brand {
+                font-size: 1.4rem;
+            }
+
+            .hero-section {
+                min-height: 35vh;
+                padding-top: 70px;
+                padding-bottom: 20px;
+            }
+
+            .hero-section h1 {
+                font-size: 2.3rem;
+                margin-bottom: 1rem !important;
+            }
+
+            .hero-section p.lead {
+                font-size: 0.95rem;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .display-4 {
+                font-size: 2.2rem;
+                margin-bottom: 2rem !important;
+            }
+
+            .product-section-title {
+                font-size: 2rem;
+                margin-bottom: 2.5rem;
+            }
+
+            .product-card img {
+                height: 180px;
+            }
+
+            .product-card .card-body {
+                padding: 1.8rem 1.2rem;
+            }
+
+            .product-card .card-title {
+                font-size: 1.2rem;
+            }
+
+            .product-card .price {
+                font-size: 1.5rem;
+            }
+
+            .social-icons a {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark-earth fixed-top py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+  <img src="images/landscape-logo-design-template-free-vector.jpg" 
+       alt="TerraBloom Logo" 
+       class="d-inline-block align-text-top me-2 rounded-circle"
+       width="40" height="40">
+  TerraBloom Gardens
+</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavCollection" aria-controls="navbarNavCollection" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavCollection">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">Our Story</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="collection.html">Collection</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="expertise.html">Expertise</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Connect</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section for Collection -->
+    <header id="collection-hero" class="hero-section d-flex align-items-center justify-content-center text-white text-center">
+        <div class="container" data-aos="fade-down" data-aos-duration="1000">
+            <h1 class="display-3 fw-bold mb-4">Our Curated Collection</h1>
+            <p class="lead mb-0">Explore our hand-picked selection of plants, tools, and garden essentials.</p>
+        </div>
+    </header>
+
+    <!-- Product Categories Section -->
+    <section id="plants" class="py-5 bg-light-earth">
+        <div class="container">
+            <h2 class="text-center display-4 mb-5 fw-bold text-dark-earth-heading product-section-title" data-aos="fade-up">Lush Greenery & Vibrant Blooms</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <div class="col">
+                    <div class="card product-card" data-aos="fade-up" data-aos-delay="100">
+                        <img src="images/Giant-Fiddle-Leaf-Fig-2.jpg" class="card-img-top" alt="Fiddle Leaf Fig">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold text-dark-earth-heading">Fiddle Leaf Fig (Large)</h5>
+                            <p class="card-text text-earth">A striking statement plant for any indoor space.</p>
+                            <span class="price fw-bold text-primary-earth">$129.99</span>
+                            <a href="#" class="btn btn-primary-earth mt-3 d-block rounded-pill">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card product-card" data-aos="fade-up" data-aos-delay="200">
+                        <img src="images/monters.jpg" class="card-img-top" alt="Monstera Deliciosa">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold text-dark-earth-heading">Monstera Deliciosa</h5>
+                            <p class="card-text text-earth">Iconic split-leaf plant, easy to care for.</p>
+                            <span class="price fw-bold text-primary-earth">$59.99</span>
+                            <a href="#" class="btn btn-primary-earth mt-3 d-block rounded-pill">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card product-card" data-aos="fade-up" data-aos-delay="300">
+                        <img src="images/french.jpg" class="card-img-top" alt="French Lavender">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold text-dark-earth-heading">French Lavender Bush</h5>
+                            <p class="card-text text-earth">Fragrant and beautiful, perfect for sunny gardens.</p>
+                            <span class="price fw-bold text-primary-earth">$24.99</span>
+                            <a href="#" class="btn btn-primary-earth mt-3 d-block rounded-pill">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card product-card" data-aos="fade-up" data-aos-delay="400">
+                        <img src="images/austerd.jpg" class="card-img-top" alt="Assorted Succulent Set">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold text-dark-earth-heading">Assorted Succulent Set</h5>
+                            <p class="card-text text-earth">Low-maintenance beauties in various shapes and sizes.</p>
+                            <span class="price fw-bold text-primary-earth">$34.99</span>
+                            <a href="#" class="btn btn-primary-earth mt-3 d-block rounded-pill">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tools" class="py-5 bg-white">
+        <div class="container">
+            <h2 class="text-center display-4 mb-5 fw-bold text-dark-earth-heading product-section-title" data-aos="fade-up">Artisanal Tools & Essentials</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <div class="col">
+                    <div class="card product-card" data-aos="fade-up" data-aos-delay="100">
+                        <img src="images/copper.jpg" class="card-img-top" alt="Hand Trowel Set">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold text-dark-earth-heading">Copper Hand Trowel Set</h5>
+                            <p class="card-text text-earth">Ergonomically designed for comfort and durability.</p>
+                            <span class="price fw-bold text-primary-earth">$45.00</span>
+                            <a href="#" class="btn btn-primary-earth mt-3 d-block rounded-pill">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card product-card" data-aos="fade-up" data-aos-delay="200">
+                        <img src="images/siccors.jpg" class="card-img-top" alt="Bypass Pruners">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold text-dark-earth-heading">Professional Bypass Pruners</h5>
+                            <p class="card-text text-earth">Sharp and precise for healthy plant trimming.</p>
+                            <span class="price fw-bold text-primary-earth">$38.50</span>
+                            <a href="#" class="btn btn-primary-earth mt-3 d-block rounded-pill">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card product-card" data-aos="fade-up" data-aos-delay="300">
+                        <img src="images/steel.jpg" class="card-img-top" alt="Galvanized Watering Can">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold text-dark-earth-heading">Galvanized Steel Watering Can</h5>
+                            <p class="card-text text-earth">Classic design, built to last for seasons.</p>
+                            <span class="price fw-bold text-primary-earth">$62.00</span>
+                            <a href="#" class="btn btn-primary-earth mt-3 d-block rounded-pill">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="decor" class="py-5 bg-light-earth">
+        <div class="container">
+            <h2 class="text-center display-4 mb-5 fw-bold text-dark-earth-heading product-section-title" data-aos="fade-up">Garden Decor & Pottery</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <div class="col">
+                    <div class="card product-card" data-aos="fade-up" data-aos-delay="100">
+                        <img src="images/ceramic.jpg" class="card-img-top" alt="Handmade Ceramic Pot">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold text-dark-earth-heading">Handmade Glazed Ceramic Pot</h5>
+                            <p class="card-text text-earth">Unique artisan pottery with a rustic finish.</p>
+                            <span class="price fw-bold text-primary-earth">$75.00</span>
+                            <a href="#" class="btn btn-primary-earth mt-3 d-block rounded-pill">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card product-card" data-aos="fade-up" data-aos-delay="200">
+                        <img src="images/tone.jpg" class="card-img-top" alt="Natural Stone Birdbath">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold text-dark-earth-heading">Natural Stone Birdbath</h5>
+                            <p class="card-text text-earth">Attract feathered friends to your serene garden.</p>
+                            <span class="price fw-bold text-primary-earth">$180.00</span>
+                            <a href="#" class="btn btn-primary-earth mt-3 d-block rounded-pill">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card product-card" data-aos="fade-up" data-aos-delay="300">
+                        <img src="images/banbo.jpg" class="card-img-top" alt="Bamboo Wind Chime">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold text-dark-earth-heading">Artisan Bamboo Wind Chime</h5>
+                            <p class="card-text text-earth">Soothing sounds for a peaceful outdoor ambiance.</p>
+                            <span class="price fw-bold text-primary-earth">$55.00</span>
+                            <a href="#" class="btn btn-primary-earth mt-3 d-block rounded-pill">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call-to-Action Section -->
+    <section id="cta" class="py-5 bg-primary-earth text-white text-center">
+        <div class="container" data-aos="zoom-in" data-aos-duration="900">
+            <h2 class="display-5 fw-bold mb-4">Can't Find What You're Looking For?</h2>
+            <p class="lead mb-5 " style="color: #2a3324;">Our team is here to help you discover the perfect additions for your garden. Reach out!</p>
+            <a href="index.html#contact" class="btn btn-outline-light-earth btn-lg rounded-pill px-4 py-2">Contact Our Experts</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-earth text-white py-4">
+        <div class="container text-center">
+            <p class="mb-3">&copy; 2023 TerraBloom Gardens. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#" class="text-white mx-2"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-pinterest"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Font Awesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Initialize AOS -->
+    <script>
+        AOS.init({
+            once: true,
+            duration: 900,
+            easing: 'ease-out-cubic',
+        });
+    </script>
+</body>
+</html>

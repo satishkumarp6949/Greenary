@@ -1,0 +1,473 @@
+/* Google Fonts - Lora (serif for headings), Nunito (sans-serif for body) */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Nunito:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary-earth: #6a804a;    /* Muted Olive Green */
+    --dark-earth: #4a5c32;       /* Deeper Olive/Forest Green */
+    --light-earth: #f4f6ef;      /* Soft Cream/Off-White */
+    --accent-terracotta: #cc7451; /* Warm Terracotta */
+    --text-color: #3f4a38;       /* Dark Greenish-Grey */
+    --heading-color: #2a3324;    /* Very Dark Green */
+    --muted-text: #6b7a61;       /* Lighter Muted Green */
+    --white: #fff;
+    --shadow-light: rgba(0, 0, 0, 0.08);
+    --shadow-deep: rgba(0, 0, 0, 0.2);
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    color: var(--text-color);
+    background-color: var(--light-earth);
+    line-height: 1.7;
+    scroll-behavior: smooth;
+    padding-top: 75px; /* Offset for fixed navbar */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    color: var(--heading-color);
+}
+
+/* Custom Bootstrap overrides */
+.navbar {
+    background-color: var(--dark-earth) !important;
+    box-shadow: 0 4px 15px var(--shadow-light);
+    transition: background-color 0.3s ease;
+}
+
+.navbar-brand {
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    color: var(--white) !important;
+    font-size: 1.6rem;
+}
+
+.navbar-nav .nav-link {
+    color: var(--white) !important;
+    padding: 0.6rem 1.2rem;
+    position: relative;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--accent-terracotta) !important; /* Highlight with terracotta */
+    transform: translateY(-2px);
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 5px; /* Adjust position */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px; /* Thinner underline */
+    background-color: var(--accent-terracotta);
+    transition: width 0.3s ease-out;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    width: 70%;
+}
+
+.btn-primary-earth {
+    background-color: var(--primary-earth);
+    border-color: var(--primary-earth);
+    color: var(--white);
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.btn-primary-earth:hover {
+    background-color: var(--dark-earth);
+    border-color: var(--dark-earth);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-outline-light-earth {
+    color: var(--white) !important;
+    border-color: var(--white) !important;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.btn-outline-light-earth:hover {
+    background-color: var(--accent-terracotta);
+    color: var(--white) !important;
+    border-color: var(--accent-terracotta) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 85vh;
+    background: linear-gradient(rgba(74, 92, 50, 0.8), rgba(106, 128, 74, 0.7)), url('https://via.placeholder.com/1920x1080/6a804a/ffffff?text=Earthy+Garden+Background') no-repeat center center/cover;
+    position: relative;
+    overflow: hidden;
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+.hero-section h1 {
+    font-family: 'Lora', serif;
+    font-size: 3.8rem;
+    color: var(--white);
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+.hero-section p.lead {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.35rem;
+    color: rgba(255, 255, 255, 0.95);
+    max-width: 550px;
+}
+
+/* --- 3D Effect for Person Pouring Water (Earthy Style) --- */
+.scene-3d {
+    perspective: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 550px; /* Slightly taller for more depth */
+    max-width: 650px;
+    margin: 0 auto;
+    border-radius: 20px; /* Softer edges */
+    transform: translateZ(0);
+}
+
+.person-watering {
+    position: absolute;
+    transform-style: preserve-3d;
+    transform: rotateX(12deg) rotateY(-18deg) translateZ(60px); /* Deeper initial tilt */
+    transition: transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smoother bezier easing */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scene-3d:hover .person-watering {
+    transform: rotateX(8deg) rotateY(-8deg) translateZ(90px) scale(1.03); /* More pronounced hover */
+}
+
+.person-watering img {
+    width: 90%; /* Adjust size */
+    height: auto;
+    border-radius: 20px; /* Softer edges */
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), /* Deeper, softer shadow */
+                0 0 0 12px rgba(255, 255, 255, 0.15); /* More prominent subtle border */
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: translateZ(30px); /* Bring image further forward */
+    object-fit: contain;
+    will-change: transform;
+}
+
+.water-effect {
+    position: absolute;
+    bottom: 18%; /* Position relative to the person-watering container */
+    left: 58%;
+    width: 90px;
+    height: 180px;
+    background: linear-gradient(to bottom, rgba(140, 200, 255, 0.9), rgba(60, 160, 255, 0.7)); /* Softer blue water */
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    transform: translateZ(40px) rotateX(75deg) rotateY(12deg); /* Stronger tilt for water */
+    opacity: 0.85;
+    filter: blur(2.5px); /* Slightly more blur */
+    animation: pourWaterEarth 2.5s infinite ease-in-out alternate; /* Slower, smoother animation */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); /* Deeper shadow */
+    z-index: 10;
+    will-change: transform, opacity;
+}
+
+.plant-pot {
+    position: absolute;
+    bottom: 7%;
+    left: 50%;
+    transform: translateX(-50%) translateZ(15px) rotateX(12deg); /* Bring pot forward, tilt */
+    width: 160px;
+    height: 110px;
+    background: linear-gradient(to right, #8B4513, var(--accent-terracotta)); /* Earthy pot colors */
+    border-radius: 0 0 50% 50% / 0 0 25% 25%; /* Slightly more pronounced bottom curve */
+    border-top: 12px solid #6F3B15; /* Thicker rim */
+    box-shadow: inset 0 10px 20px rgba(0, 0, 0, 0.5), 0 20px 40px rgba(0, 0, 0, 0.4); /* Deeper shadows */
+    z-index: 5;
+    will-change: transform;
+}
+
+.ground-texture { /* Changed from ground-shadow to emphasize texture/ground */
+    position: absolute;
+    bottom: -10px; /* Slightly below the scene for ground effect */
+    left: 50%;
+    transform: translateX(-50%) translateZ(-15px) rotateX(85deg); /* Flatter, deeper */
+    width: 85%;
+    height: 70px; /* Taller for more texture */
+    background: radial-gradient(ellipse at center, rgba(74, 92, 50, 0.6) 0%, rgba(74, 92, 50, 0) 70%); /* More organic shadow */
+    border-radius: 50%;
+    filter: blur(20px);
+    z-index: 0;
+    will-change: transform;
+}
+
+@keyframes pourWaterEarth {
+    0% { transform: translateZ(40px) rotateX(75deg) rotateY(12deg) scaleY(0.85); opacity: 0.75; }
+    100% { transform: translateZ(40px) rotateX(75deg) rotateY(12deg) scaleY(1.05); opacity: 0.95; }
+}
+/* --- End 3D Effect --- */
+
+/* General Section Styling */
+section {
+    padding: 90px 0;
+}
+
+.bg-light-earth {
+    background-color: var(--light-earth);
+}
+
+.text-primary-earth {
+    color: var(--primary-earth) !important;
+}
+
+.text-dark-earth-heading {
+    color: var(--heading-color) !important;
+}
+
+.text-muted-earth {
+    color: var(--muted-text) !important;
+}
+
+.featurette-heading {
+    font-family: 'Lora', serif;
+    font-weight: 700;
+}
+
+.featurette-divider {
+    border-top: 1px dashed rgba(0, 0, 0, 0.15);
+}
+
+/* Product Cards */
+.product-card {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border-radius: 18px; /* More rounded */
+    overflow: hidden;
+    box-shadow: 0 8px 25px var(--shadow-light);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px var(--shadow-deep);
+}
+
+.product-card img {
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    object-fit: cover;
+    height: 220px; /* Slightly taller for visual weight */
+    width: 100%;
+}
+
+.product-card .card-body {
+    padding: 2.2rem 1.8rem; /* More generous padding */
+}
+
+.product-card .price {
+    font-size: 1.8rem;
+    font-family: 'Lora', serif; /* Use serif for price */
+}
+
+/* Service Cards */
+.service-card {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border-radius: 18px;
+    box-shadow: 0 8px 25px var(--shadow-light);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.service-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 35px var(--shadow-deep);
+    background-color: var(--white);
+}
+
+.service-card i {
+    color: var(--primary-earth);
+}
+
+/* Testimonials Carousel */
+#testimonialCarousel {
+    margin-top: 3.5rem;
+}
+
+#testimonialCarousel .carousel-item {
+    padding: 2.5rem 1.5rem;
+}
+
+#testimonialCarousel .carousel-control-prev-icon,
+#testimonialCarousel .carousel-control-next-icon {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    padding: 1.2rem;
+}
+
+/* Contact Section */
+#contact .form-control {
+    border-radius: 12px; /* More rounded inputs */
+    padding: 0.9rem 1.2rem;
+    border: 1px solid #ced4da;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contact .form-control:focus {
+    border-color: var(--primary-earth);
+    box-shadow: 0 0 0 0.25rem rgba(106, 128, 74, 0.3);
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-earth);
+}
+
+.social-icons a {
+    font-size: 1.6rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--accent-terracotta) !important;
+}
+
+/* Modern UI Enhancements */
+.rounded-lg {
+    border-radius: 1.2rem !important; /* Custom rounded class for larger elements */
+}
+
+/* --- Media Queries for max-width: 450px --- */
+@media (max-width: 450px) {
+    body {
+        padding-top: 65px;
+    }
+
+    .navbar-brand {
+        font-size: 1.4rem;
+    }
+
+    .hero-section {
+        min-height: 65vh;
+        padding-top: 70px;
+        padding-bottom: 20px;
+    }
+
+    .hero-section h1 {
+        font-size: 2.3rem;
+        margin-bottom: 1.2rem !important;
+    }
+
+    .hero-section p.lead {
+        font-size: 0.95rem;
+        margin-bottom: 1.8rem !important;
+    }
+
+    .hero-section .btn-lg {
+        font-size: 0.85rem;
+        padding: 0.7rem 1.2rem;
+        margin-bottom: 10px;
+        display: block;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-section .btn-lg + .btn-lg {
+        margin-left: auto !important;
+    }
+
+    .scene-3d {
+        height: 380px;
+        margin-top: 25px;
+    }
+
+    .person-watering img {
+        width: 100%;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 0 0 8px rgba(255, 255, 255, 0.15);
+    }
+
+    .water-effect {
+        bottom: 15%;
+        left: 55%;
+        width: 70px;
+        height: 120px;
+        transform: translateZ(30px) rotateX(70deg) rotateY(10deg);
+        filter: blur(2px);
+    }
+
+    .plant-pot {
+        bottom: 5%;
+        width: 130px;
+        height: 90px;
+        border-top: 10px solid #6F3B15;
+    }
+
+    .ground-texture {
+        bottom: -5px;
+        width: 90%;
+        height: 60px;
+        filter: blur(15px);
+    }
+
+    section {
+        padding: 60px 0;
+    }
+
+    .display-4 {
+        font-size: 2.2rem;
+        margin-bottom: 2rem !important;
+    }
+
+    .featurette-heading {
+        font-size: 1.6rem;
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    .featurette p.lead {
+        font-size: 0.95rem;
+        text-align: center;
+    }
+
+    .product-card img {
+        height: 180px;
+    }
+
+    .product-card .card-body {
+        padding: 1.8rem 1.2rem;
+    }
+
+    .product-card .card-title {
+        font-size: 1.2rem;
+    }
+
+    .product-card .price {
+        font-size: 1.5rem;
+    }
+
+    .service-card h4 {
+        font-size: 1.3rem;
+    }
+
+    #contact .row.justify-content-center > div {
+        margin-bottom: 15px;
+    }
+
+    .social-icons a {
+        font-size: 1.4rem;
+    }
+}
